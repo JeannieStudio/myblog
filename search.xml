@@ -4,7 +4,6 @@
     <title>ssr+tls+caddy仍然稳得一批</title>
     <url>/2020/02/26/ssr+tls+caddy%E4%BB%8D%E7%84%B6%E7%A8%B3%E5%BE%97%E4%B8%80%E6%89%B9/</url>
     <content><![CDATA[<h2 id="Caddy与Nginx对比："><a href="#Caddy与Nginx对比：" class="headerlink" title="Caddy与Nginx对比："></a>Caddy与Nginx对比：</h2><p>caddy具有以下优点：<br>1.go语言写的可以跨平台，无需安装任何依赖。<br>2.安装和配置简单，不管你是新的web开发者，还是专业人士，都能够快速上手。<br>3.默认使用Let’s Encrypt提供的免费证书，自动让网站升级到HTTPS。最重要的是可以自动更新证书，永远不担心证书过期哟。<br>4.更合个人小型项目。</p>
-<a id="more"></a>
 <p>Ngnix的优点：<br>性能更好，适合做大型项目服务器。</p>
 <h2 id="caddy安装和配置："><a href="#caddy安装和配置：" class="headerlink" title="caddy安装和配置："></a>caddy安装和配置：</h2><h3 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h3><p>caddy官方下载地址：<a href="https://caddyserver.com/v1/download" target="_blank" rel="noopener">https://caddyserver.com/v1/download</a></p>
 <p>可以看到caddy官方脚本是：</p>
@@ -25,7 +24,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="caddy配置"><a href="#caddy配置" class="headerlink" title="caddy配置"></a>caddy配置</h3><p><a href="https://jeanniestudio.github.io/blog/%E4%BD%BF%E7%94%A8winscp%E8%BF%9E%E6%8E%A5vps%E6%95%99%E7%A8%8B-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/">winscp连接vps教程：</a></p>
+<h3 id="caddy配置"><a href="#caddy配置" class="headerlink" title="caddy配置"></a>caddy配置</h3><p><a href="https://jeanniestudio.github.io/blog/%E4%BD%BF%E7%94%A8winscp%E8%BF%9E%E6%8E%A5vps%E6%95%99%E7%A8%8B-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/" target="_blank" rel="noopener">winscp连接vps教程：</a></p>
 <p>用winscp连接vps后，在/etc目录下创建caddy目录，之后创建名为Caddyfile的文件，文件内容如下：</p>
 <p><strong>注意：域名、端口和邮箱改成自己的。</strong></p>
 <p><strong>Caddyfile文件填写如下内容：</strong></p>
@@ -64,7 +63,6 @@
 <p>2.”redirect”: [“*:443#127.0.0.1:1234”]  添加这一句，注意1234这个端口号要和Caddyfile里的端口保持一致。</p>
 <p><strong>修改好后重启ssr: /etc/init.d/shadowsocks-r restart.</strong></p>
 <p>大功告成！！！</p>
-<h2 id="捐助本站"><a href="#捐助本站" class="headerlink" title="捐助本站"></a>捐助本站</h2><p><img src="https://github.com/JeannieStudio/jeanniestudio.images/blob/master/%E6%8D%90%E5%8A%A92.png?raw=true" alt="二维码"></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -154,7 +152,7 @@
     <title>最坚挺的出国方式：v2ray+CDN+Ngnix+Websocket</title>
     <url>/2020/02/15/%E6%9C%80%E5%9D%9A%E6%8C%BA%E5%87%BA%E5%9B%BD%E6%96%B9%E5%BC%8F%EF%BC%9Av2ray+CDN+Ngnix+websocket/</url>
     <content><![CDATA[<h2 id="一、开启BBR"><a href="#一、开启BBR" class="headerlink" title="一、开启BBR"></a>一、开启BBR</h2><p><strong>Debian9 自带BBR，所以可以直接通过参数开启BBR加速。打开/etc/sysctl.conf，添加以下2行代码：</strong></p>
-<p>说明：作者习惯用windows连接工具登录到vps进行修改，下面链接是WINSCP连接VPS的教程，喜欢的小伙伴可以去看看。<br>  <a href="https://jeanniestudio.github.io/blog/%E4%BD%BF%E7%94%A8winscp%E8%BF%9E%E6%8E%A5vps%E6%95%99%E7%A8%8B-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/">winscp工具使用教程</a><br>  <a id="more"></a></p>
+<p>说明：作者习惯用windows连接工具登录到vps进行修改，下面链接是WINSCP连接VPS的教程，喜欢的小伙伴可以去看看。<br>  <a href="https://jeanniestudio.github.io/blog/%E4%BD%BF%E7%94%A8winscp%E8%BF%9E%E6%8E%A5vps%E6%95%99%E7%A8%8B-%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/" target="_blank" rel="noopener">winscp工具使用教程</a><br>  <a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">net.core.default_qdisc&#x3D;fq</span><br><span class="line">net.ipv4.tcp_congestion_control&#x3D;bbr</span><br></pre></td></tr></table></figure>
 <p><strong>添加并保存，完成之后别忘了执行以下命令重启：</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
